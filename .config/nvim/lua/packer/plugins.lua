@@ -49,7 +49,6 @@ return require('packer').startup(function(use)
 
 	use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end } --}}}
 
-
 	-- IDE NVim --
 	-- LSP - autoComplete - git - commenter - rest client {{{
 
@@ -83,6 +82,10 @@ return require('packer').startup(function(use)
 			{ 'rafamadriz/friendly-snippets' },
 		}
 	}
+	use "jose-elias-alvarez/null-ls.nvim"
+	use 'folke/lsp-colors.nvim'
+	-- debug
+	use "folke/trouble.nvim"
 
 	-- Tabs
 	use { 'akinsho/bufferline.nvim',

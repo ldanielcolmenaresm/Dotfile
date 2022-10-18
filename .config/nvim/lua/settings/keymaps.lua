@@ -3,7 +3,7 @@ local mapper = function(mode, key, result)
 end
 
 -- custom mapping
-mapper('n', '<leader>x', ':w <CR>')--{{{
+mapper('n', '<leader>x', ':w <CR>') --{{{
 mapper('n', '<leader>X', ':w! <CR>')
 mapper('n', '<leader>z', ':q <CR>')
 mapper('n', '<leader>Z', ':q! <CR>')
@@ -19,33 +19,29 @@ mapper('n', '<leader>N', ':set nowrap <CR>')
 
 mapper('n', '<leader>r', ':source %<CR>')
 
-mapper('n', '<leader>C', ':LuaCacheLog <CR>')--}}}
+mapper('n', '<leader>C', ':LuaCacheLog <CR>') --}}}
 
 -- Tabs navigation
-mapper('n', '<leader>j', '10<CR>')--{{{
+mapper('n', '<leader>j', '10<CR>') --{{{
 mapper('n', '<leader>;', '20<CR>')
 mapper('n', '<leader>k', '10-<CR>')
 mapper('n', '<leader>p', '20-<CR>')
 mapper('v', '<leader>j', '10<CR>')
 mapper('v', '<leader>;', '20<CR>')
 mapper('v', '<leader>k', '10-<CR>')
-mapper('v', '<leader>p', '20-<CR>')--}}}
+mapper('v', '<leader>p', '20-<CR>') --}}}
 
 -- Resize
-mapper('n', '<leader>=', '<c-w>5+')--{{{
+mapper('n', '<leader>=', '<c-w>5+') --{{{
 mapper('n', '<leader>-', '<c-w>5-')
 mapper('n', '<leader>>', '10<c-w>>')
-mapper('n', '<leader><', '10<c-w><')--}}}
+mapper('n', '<leader><', '10<c-w><') --}}}
 
 -- Run current file and Testing
-mapper('n', '<leader>1', ':!node %<CR>')--{{{
+mapper('n', '<leader>1', ':!node %<CR>') --{{{
 mapper('n', '<leader>2', ':!python %<CR>')
 mapper('n', '<leader>3', ':!sh %<CR>')
 
--- Instalar complementos y settings
-mapper('n', '<leader>t', ':TestNearest <CR>')
-mapper('n', '<leader>T', ':TestFile <CR>')
-mapper('n', '<leader>TT', ':TestSuite <CR>')--}}}
 
 ---------------------------------
 ------------ IDE CONFIG ---------
@@ -62,7 +58,8 @@ mapper('n', '<leader>w', '<leader><leader>w')
 mapper('n', '<leader>e', '<Leader><Leader>e')
 mapper('n', '<leader>b', '<Leader><Leader>b')
 ---- lsp format ----
-mapper('n', '<leader>a', ':lua vim.lsp.buf.formatting_sync() <cr>')
+--mapper('n', '<leader>a', ':lua vim.lsp.buf.formatting_sync() <cr>') deprecate
+mapper('n', '<leader>a', ':lua vim.lsp.buf.format() <cr>')
 ---- Harpoon ----
 mapper('n', '<leader>H', ':lua require("harpoon.ui").toggle_quick_menu() <cr>')
 mapper('n', '<leader>h', ':lua require("harpoon.mark").add_file() <cr>')
@@ -74,6 +71,11 @@ mapper('n', '<leader>M', ':MarkdownPreviewToggle <CR>')
 
 -- Rest Client
 mapper('n', '<leader>R', ':lua require("rest-nvim").run() <cr>')
+
+-- debugging
+mapper('n', '<leader>t', ':TroubleToggle document_diagnostics <CR>')
+mapper('n', '<leader>T', ':TroubleToggle workspace_diagnostics <CR>')
+
 --}}}
 
 ----- Tags close html -----
@@ -101,9 +103,9 @@ mapper('i', '<div', '<div></div>')
 mapper('i', '<>', '<></>')
 mapper('i', '<but', '<button></button>')
 ----------------------------------------
-mapper('i','<a', '<a href=""></a>')
-mapper('i','<span', '<span></span>')
-mapper('i','<img', '<img src="" />')
+mapper('i', '<a', '<a href=""></a>')
+mapper('i', '<span', '<span></span>')
+mapper('i', '<img', '<img src="" />')
 mapper('i', '<form', '<form></form>')
 mapper('i', '<lab', '<label></label>')
-mapper('i', '<cod', '<code></code>')--}}}
+mapper('i', '<cod', '<code></code>') --}}}
